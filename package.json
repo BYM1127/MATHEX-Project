@@ -1,0 +1,39 @@
+{
+  "name": "mathex-project",
+  "version": "1.0.0",
+  "description": "Specializing u=in high quality house building, renovations and technical plumbing services",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BYM1127/MATHEX-Project.git"
+  },
+  "keywords": [],
+  "author": "St10440322-Bokamoso-Sebake <st10440322@myemeris.edu.za>",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/BYM1127/MATHEX-Project/issues"
+  },
+  "homepage": "https://github.com/BYM1127/MATHEX-Project#readme",
+  "dependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.0",
+    "autoprefixer": "^10.4.20",
+    "lucide-react": "^1.56.0",
+    "next": "^14.2.15",
+    "postcss": "^8.4.47",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwindcss": "^3.4.14"
+  },
+  "devDependencies": {
+    "typescript": "^5.6.3"
+  }
+}
