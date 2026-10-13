@@ -54,7 +54,7 @@ export default function AboutUsPage() {
               <img
                 className="w-full h-full object-cover brightness-90 contrast-125"
                 alt="Monolithic reinforced concrete framework of an industrial headquarters at twilight in Johannesburg."
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuANSXGNArluAOFQ73hGPDjANxDaUv0-EU_19AEraJidRf1PwQTiJ5pg8TyXVoy6H1zXhVUEk1MbKXzV2LTYy_q0w_RtjsPK1FAx6QxN1u105Q_AtvvbRDzaJOC1Q3HjR0JoeYho0nZ8u1XNW1AMRP5F1F1eK9XcePQPQ0wmg8H44h2msOEr_B-oPKuN7Vw3Q6P6A-kyvq7MCJL3E5wXDaiO5rNLlitvalz9W4hkhRe-D4U5VpR173_c"
+                src="/projects/mathex-work-19.jpg"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
               <div className="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md p-space-md flex items-center justify-between border border-outline-variant/30">
@@ -178,7 +178,7 @@ export default function AboutUsPage() {
                   <img
                     className="w-full h-full object-cover filter grayscale contrast-125 group-hover:scale-105 transition-transform duration-500"
                     alt="Sipho Ndlovu, Pr.Eng"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDpGUQyWIIiML0NDtS1liUOgAyelnbNY9vzrj7xhIutRrZEMs5K1vEEU1rAOI4RZs4rzhf3E9E1c6Uy-nddxYlS0fHNG1nyeY1trzbsYPnHXVnjhtA-ZN3juR7v9bnl9JbtkfKb-aa2vL5Luj5UtoZkbUAK3fBQAjGOXYMewwxiC-6t9dTxCwVtRLAoRLHV2E6KwHKNhKxOidDwo67FIka0OxUwmFclRFeEp2X3PXf5jiIPgrL-wXDw"
+                    src="/projects/mathex-work-09.jpg"
                   />
                   <div className="absolute top-3 left-3 bg-surface-container-lowest/90 px-2.5 py-1 font-label-mono text-[10px] text-primary-container border border-outline-variant/40">
                     ECSA REG: 200847921
@@ -216,7 +216,7 @@ export default function AboutUsPage() {
                   <img
                     className="w-full h-full object-cover filter grayscale contrast-125 group-hover:scale-105 transition-transform duration-500"
                     alt="Dirk Van Zyl"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuAunJjw6ob6Ucdc1OMxVI5POzlWZg-t83rxlaOI6AdHwHYQ90STWpoAVpuYCoL7qJRRsRUOw6PUO9PqyY0JJnUY7rnjDUuYFa8zh10vXq3NGkhnMMscpOSt84x3bMEHydrY3FCV-Xg2s-H8u-RsMBJmT_lg-weQ584xlNHl38B0DIt2kCai-2VxWP8Loq943WGE52Ko7oJxyToVShrH-fqhLh1YjieSJbBhuR9MCe--mmsln-hedW7Q"
+                    src="/projects/mathex-work-15.jpg"
                   />
                   <div className="absolute top-3 left-3 bg-surface-container-lowest/90 px-2.5 py-1 font-label-mono text-[10px] text-secondary border border-outline-variant/40">
                     PIRB LIC: M-490218
@@ -254,7 +254,7 @@ export default function AboutUsPage() {
                   <img
                     className="w-full h-full object-cover filter grayscale contrast-125 group-hover:scale-105 transition-transform duration-500"
                     alt="Kgomotso Molefe"
-                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuBNvKkTIkF2DXkeZJWCaLPHy1f77K85iN3WkQFQYe_BuXN2wEwQCj91HZdPjg3sk9pQankq9qsmXXzxZ_dgpgZgumGruQswqzdMEr5OhECsIek4Whes6lMDzZQKwhlPLQ-BT3C7KdA9vSeWdQqD2-3oTMeeJsemNrN0TJGgSB26c0cmOmpu-RHpjNwHzOGzxEbXrqZokXQMuTnTPiJ1KDzRpsMTCcZgctk_PQY7BXewpe7ALkPpGG0h"
+                    src="/projects/mathex-work-22.jpg"
                   />
                   <div className="absolute top-3 left-3 bg-surface-container-lowest/90 px-2.5 py-1 font-label-mono text-[10px] text-primary-container border border-outline-variant/40">
                     SACPCMP: CPM/29184
@@ -461,7 +461,7 @@ export default function AboutUsPage() {
                 <img
                   className="w-full h-full object-cover"
                   alt="Mathex Project Main Reef Depot"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU0NFbNN_Y6-imGSxlxT97UR5uchQPRIXGvdGUzjzrGoVx_oly_AVxvru2bSAucHpYyc26P_nCoLIYyUSQWXe2RRNPjkO9vCTsdAXUJkcnGsLEnPgTs81vP9SED-TBn_5b8qqzc3kc11QidfwNN_AsGsn4hUn77YRmY9--ckCwK0dD0B7npobSxcQL2rnY-2rh_b5NzfVo-AwxNdwAawJ8MyFprv7pHj1kX2ZYdTsGTdmC6XiYRDWy"
+                  src="/projects/mathex-work-13.jpg"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/80 via-transparent to-transparent"></div>
                 <div className="absolute bottom-4 left-4 flex items-center gap-space-md">
@@ -533,3 +533,4 @@ export default function AboutUsPage() {
     </div>
   );
 }
+

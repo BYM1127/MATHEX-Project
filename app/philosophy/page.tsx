@@ -81,7 +81,7 @@ export default function PhilosophyPage() {
 
             <div className="lg:col-span-6 relative h-80 bg-surface-container overflow-hidden border border-outline-variant/30">
               <img
-                src="https://images.unsplash.com/photo-1541888946425-d0fbb186c5f9?auto=format&fit=crop&w=1200&q=80"
+                src="/projects/mathex-work-14.jpg"
                 alt="Exposed post-tensioned cantilever beams"
                 className="w-full h-full object-cover"
               />
@@ -305,7 +305,7 @@ export default function PhilosophyPage() {
 
               <div className="relative w-full h-64 bg-surface-container overflow-hidden border border-outline-variant/20">
                 <img
-                  src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80"
+                  src="/projects/mathex-work-22.jpg"
                   alt="Cast as-built node junction"
                   className="w-full h-full object-cover"
                 />
@@ -344,7 +344,7 @@ export default function PhilosophyPage() {
             <div className="bg-surface-container-low border border-outline-variant/30 p-space-md space-y-space-sm shadow-md">
               <div className="relative w-full h-40 bg-surface-container overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80"
+                  src="/projects/mathex-work-25.jpg"
                   alt="Ultra-Flat Polished Concrete"
                   className="w-full h-full object-cover"
                 />
@@ -367,7 +367,7 @@ export default function PhilosophyPage() {
             <div className="bg-surface-container-low border border-outline-variant/30 p-space-md space-y-space-sm shadow-md">
               <div className="relative w-full h-40 bg-surface-container overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1546484475-7f7bd55792da?auto=format&fit=crop&w=800&q=80"
+                  src="/projects/mathex-work-22.jpg"
                   alt="Structural Mass Timber"
                   className="w-full h-full object-cover"
                 />
@@ -390,7 +390,7 @@ export default function PhilosophyPage() {
             <div className="bg-surface-container-low border border-outline-variant/30 p-space-md space-y-space-sm shadow-md">
               <div className="relative w-full h-40 bg-surface-container overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1504917599217-d4dc5ebe6122?auto=format&fit=crop&w=800&q=80"
+                  src="/projects/mathex-work-35.jpg"
                   alt="Architectural Brass & Bronze"
                   className="w-full h-full object-cover"
                 />
@@ -413,7 +413,7 @@ export default function PhilosophyPage() {
             <div className="bg-surface-container-low border border-outline-variant/30 p-space-md space-y-space-sm shadow-md">
               <div className="relative w-full h-40 bg-surface-container overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80"
+                  src="/projects/mathex-work-25.jpg"
                   alt="Acoustic Core"
                   className="w-full h-full object-cover"
                 />
@@ -468,3 +468,5 @@ export default function PhilosophyPage() {
     </div>
   );
 }
+
+

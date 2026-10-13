@@ -6,369 +6,230 @@ import Link from 'next/link';
 export default function HomePage() {
   const [activeFilter, setActiveFilter] = useState('ALL');
 
-  const projects = [
+  const services = [
     {
-      id: 'hyde-park',
-      category: 'RESIDENTIAL',
-      badge1: 'PRECISION // RES-24',
-      badge2: 'OFF-SHUTTER TECTONICS // 45 MPA',
-      subCategory: 'RESIDENTIAL // STRUCTURAL MONOLITH // SANDTON',
-      title: 'THE HYDE PARK MONOLITH',
-      desc: 'Laser-level suspense and structural execution of 18-meter ground spans using post-tensioned 45MPa concrete and customised steel tension ties to eliminate interior load-bearing walls.',
-      spec1: 'TOTAL FLOOR: 1,840 M²',
-      spec2: 'DURATION: 18 MONTHS',
-      spec3: 'COMPLETION: Q1 2024',
-      imageUrl: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80',
+      title: 'Luxury House Building',
+      desc: 'Bespoke high-end homes, ground-up architectural estates, cantilevered structures, and turnkey finishes built to perfection.',
+      icon: 'villa',
+      badge: 'Turnkey Residential',
+      href: '/services#residential',
     },
     {
-      id: 'rosebank',
-      category: 'HYDRONIC',
-      badge1: 'PIPELINE // HY-08-CIV',
-      badge2: 'RETICULATION // SANS 10252 COMPLIANT',
-      subCategory: 'CIVIC RETICULATION // FLUID DYNAMICS // JHB SUB-SURFACE',
-      title: 'ROSEBANK DISTRICT HYDRONICS',
-      desc: 'High-pressure subterranean fluid reticulation infrastructure and closed-loop heat dissipation networks servicing a 14,200m² mixed-use precinct. Sub-surface manifold chambers rated at 25 bar burst-proof hydro testing.',
-      spec1: 'PRESSURE: 25.0 BAR',
-      spec2: 'RETICULATION: 14,200 M²',
-      spec3: 'DISCIPLINE: BULK FLUID',
-      imageUrl: 'https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80',
+      title: 'High-End Renovations',
+      desc: 'Master bathroom remodels, structural wall removals, second-storey additions, and luxury outdoor entertainment patio kitchens.',
+      icon: 'home_repair_service',
+      badge: 'Alterations & Upgrades',
+      href: '/services#renovation',
     },
     {
-      id: 'saxonwold',
-      category: 'RESIDENTIAL',
-      badge1: 'FACADE-02 // HERIT-08',
-      badge2: 'HERITAGE / CONTEMPORARY STEEL TIES',
-      subCategory: 'HERITAGE RECONSTRUCTION // PARKTOWN',
-      title: 'SAXONWOLD HERITAGE CONVERSION',
-      desc: 'Surgical underpinning and seismic structural remediation of an 1912 heritage residence coupled with a bespoke 14-meter double-glazed steel frame conservatory cantilever with zero vibration transmission.',
-      spec1: 'FOUNDATION AGE: 112 YEARS (1912)',
-      spec2: 'STEEL FRAME: 350WA GRADE',
-      spec3: 'TOLERANCE: <0.75 MM',
-      imageUrl: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80',
+      title: 'Plumbing & Water Systems',
+      desc: 'Whole-house water purification stations, backup storage tanks, booster pumps, solar geysers, and certified leak-free reticulation.',
+      icon: 'water_drop',
+      badge: 'PIRB Master Licensed',
+      href: '/services#plumbing',
     },
     {
-      id: 'midrand',
-      category: 'CIVIL',
-      badge1: 'CIVIL-LOG-01 // DISTRIB',
-      badge2: 'SUPERFLAT // TR-34 FM2 FLOORING',
-      subCategory: 'HEAVY INDUSTRIAL INFRASTRUCTURE // MIDRAND',
-      title: 'MIDRAND LOGISTICS APPARATUS',
-      desc: '48,000 m² continuous joint-free post-tensioned concrete slab engineered for high-frequency heavy axle forklift loads. Precision laser screeding delivers five-year maintenance-free surface integrity.',
-      spec1: 'SLAB AREA: 48,000 SQM',
-      spec2: 'POINT LOAD: 120 KN/SQM',
-      spec3: 'FLATNESS: TR34 CLASS 2',
-      imageUrl: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1200&q=80',
+      title: 'Civil & Foundation Engineering',
+      desc: 'Engineered raft foundations, retaining walls, soil stabilization, and structural concrete overseen by licensed professional engineers.',
+      icon: 'engineering',
+      badge: 'CIDB Grade 9GB / 9CE',
+      href: '/services#civil',
     },
   ];
 
-  const filteredProjects = projects.filter((p) => {
+  const clientProjects = [
+    {
+      id: 'floating-staircase',
+      category: 'HOMES',
+      title: 'Bespoke Cantilevered Marble Staircase',
+      location: 'Meyersdal Eco Estate, JHB',
+      desc: 'Architectural floating zigzag marble staircase with handcrafted mosaic riser detailing, built adjacent to a double-volume structural curtain glass facade.',
+      spec: 'Engineered Cantilever • Handcrafted Marble • Glass Facade',
+      imageUrl: '/projects/mathex-work-14.jpg',
+    },
+    {
+      id: 'master-ensuite',
+      category: 'RENOVATIONS',
+      title: 'Luxury Master Ensuite with Illuminated Plinth',
+      location: 'Steyn City, Johannesburg',
+      desc: 'Complete luxury bathroom renovation featuring a freestanding bathtub on a curved LED-illuminated marble plinth, brass fixtures, and recessed architectural lighting.',
+      spec: 'Underfloor Heating Tested • Calacatta Marble • Brass Spouts',
+      imageUrl: '/projects/mathex-work-03.jpg',
+    },
+    {
+      id: 'braai-patio',
+      category: 'RENOVATIONS',
+      title: 'Modern Outdoor Patio & Built-In Braai Kitchen',
+      location: 'Waterfall Country Estate, Midrand',
+      desc: 'Turnkey outdoor entertainment space with large-format concrete porcelain tiles, integrated stainless steel gas braai, prep sink, and quartz waterfall countertops.',
+      spec: 'Weatherproof Louvred Joinery • Quartz Waterfall Countertops',
+      imageUrl: '/projects/mathex-work-22.jpg',
+    },
+    {
+      id: 'water-plant',
+      category: 'PLUMBING',
+      title: 'Central Water Purification & Backup Plant',
+      location: 'Bryanston, Sandton',
+      desc: 'Closed-loop multi-stage water filtration and storage system featuring 5,000L JoJo water tanks, automatic pressure booster pumps, and UV purification.',
+      spec: 'SANS 10252 Compliant • Constant High Pressure • Backup Water',
+      imageUrl: '/projects/mathex-work-02.jpg',
+    },
+    {
+      id: 'walkin-shower',
+      category: 'RENOVATIONS',
+      title: 'Full Height Calacatta Marble Wet Room',
+      location: 'Hyde Park, Sandton',
+      desc: 'Master bathroom overhaul with bookmatched Calacatta marble porcelain slabs, floating shower bench, recessed shampoo niches, and frameless glass door.',
+      spec: 'Floor-to-Ceiling Slabs • Floating Bench • Frameless Glass',
+      imageUrl: '/projects/mathex-work-15.jpg',
+    },
+    {
+      id: 'modern-vanity',
+      category: 'RENOVATIONS',
+      title: 'Contemporary Floating Vanity & Black Tapware',
+      location: 'Bedfordview, Johannesburg',
+      desc: 'Custom wall-hung vanity installation with composite quartz countertops, matte black vessel mixer, backlit LED mirror cabinet, and marble slab walls.',
+      spec: 'Matte Black Fixtures • Backlit Mirror • Floating Basin',
+      imageUrl: '/projects/mathex-work-09.jpg',
+    },
+  ];
+
+  const filteredProjects = clientProjects.filter((p) => {
     if (activeFilter === 'ALL') return true;
-    if (activeFilter === 'CIVIL') return p.category === 'CIVIL';
-    if (activeFilter === 'HYDRONIC') return p.category === 'HYDRONIC';
-    if (activeFilter === 'RESIDENTIAL') return p.category === 'RESIDENTIAL';
-    return true;
+    return p.category === activeFilter;
   });
 
   return (
     <div className="flex flex-col w-full">
-      {/* Top Banner Ribbon */}
-      <section className="w-full bg-surface-container-lowest py-space-sm px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-space-sm">
-          <div className="flex items-center gap-space-sm font-label-mono text-label-mono text-on-surface-variant">
-            <span className="inline-block w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
-            <span className="text-primary-container uppercase font-bold">FLAGSHIP COMMISSION // SANDTON CREST</span>
-            <span className="text-outline-variant">::</span>
-            <span>SPECS: 120+ TON REBAR // CONCRETE SPEC: 45MPa</span>
-          </div>
-          <div className="flex items-center gap-space-md font-label-mono text-label-mono text-on-surface-variant">
-            <span className="bg-surface-container px-2 py-0.5 text-secondary">CIDB GRADE 9GB / 9CE</span>
-            <span className="bg-surface-container px-2 py-0.5 text-primary-container">B-BBEE LEVEL 1</span>
-            <span className="bg-surface-container px-2 py-0.5 text-on-surface">ECSA PR.ENG LED</span>
-          </div>
-        </div>
-      </section>
-
       {/* Hero Section */}
-      <section className="w-full bg-surface py-space-xl px-4 sm:px-6 lg:px-8 relative overflow-hidden">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
-          <div className="lg:col-span-7 flex flex-col gap-space-md z-10">
-            <div className="flex items-center gap-space-xs font-label-mono text-label-mono text-secondary">
-              <span className="material-symbols-outlined text-[16px]">token</span>
-              <span>ESTABLISHED 2014 // WITWATERSRAND BASIN FOUNDATION</span>
+      <section className="relative w-full bg-surface py-16 md:py-24 px-4 sm:px-6 lg:px-8 border-b border-outline-variant/20 overflow-hidden">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          {/* Hero Copy */}
+          <div className="lg:col-span-7 space-y-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 bg-surface-container border border-outline-variant/40 rounded-full text-xs font-label-mono text-secondary">
+              <span className="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+              <span>AUTHENTIC CRAFTSMANSHIP &bull; 100% REAL CLIENT WORK</span>
             </div>
 
-            <h1 className="font-display-hero text-display-hero uppercase tracking-tight text-on-surface leading-none">
-              STEYN CITY RESIDENCE &amp; <br />
-              <span className="text-primary-container">COMMERCIAL TOWERS</span>
+            <h1 className="font-display-hero text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight text-on-surface font-bold leading-tight">
+              Luxury House Building, <br />
+              <span className="text-primary-container">Home Renovations</span> &amp; <br />
+              Expert Plumbing
             </h1>
 
-            <p className="font-body-lg text-body-lg text-on-surface-variant max-w-2xl leading-relaxed">
-              Deep-foundation monolithic reinforced frame structure incorporating post-tensioned shear plates, axial architecture, and off-shutter finishes constructed to an uncompromising ±1.5mm operational envelope.
+            <p className="font-body-md text-base sm:text-lg text-on-surface-variant max-w-xl leading-relaxed">
+              We turn ambitious architectural plans into beautifully finished homes. From ground-up luxury residences and designer master bathrooms to water backup systems and structural foundations across Johannesburg and Gauteng.
             </p>
 
-            {/* 4 Hero Metric Tiles */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-space-sm pt-space-xs">
-              <div className="bg-surface-container p-space-sm border border-outline-variant/30">
-                <span className="font-label-mono text-[10px] text-on-surface-variant uppercase tracking-wider block">FOOTPRINT</span>
-                <span className="font-headline-sm text-headline-sm font-bold text-on-surface">10,850 m²</span>
-                <span className="font-label-mono text-[10px] text-secondary block mt-0.5">TOTAL SITE AREA</span>
-              </div>
-              <div className="bg-surface-container p-space-sm border border-outline-variant/30">
-                <span className="font-label-mono text-[10px] text-on-surface-variant uppercase tracking-wider block">COMPRESSIVE SPEC</span>
-                <span className="font-headline-sm text-headline-sm font-bold text-primary-container">45MPa</span>
-                <span className="font-label-mono text-[10px] text-on-surface-variant block mt-0.5">C45/55 CORE RATING</span>
-              </div>
-              <div className="bg-surface-container p-space-sm border border-outline-variant/30">
-                <span className="font-label-mono text-[10px] text-on-surface-variant uppercase tracking-wider block">HANDOVER ETA</span>
-                <span className="font-headline-sm text-headline-sm font-bold text-on-surface">NOV 2024</span>
-                <span className="font-label-mono text-[10px] text-secondary block mt-0.5">CONSTRUCTION Y-3</span>
-              </div>
-              <div className="bg-surface-container p-space-sm border border-outline-variant/30">
-                <span className="font-label-mono text-[10px] text-on-surface-variant uppercase tracking-wider block">CONTRACT VALUE</span>
-                <span className="font-headline-sm text-headline-sm font-bold text-primary-container">R142.8M</span>
-                <span className="font-label-mono text-[10px] text-on-surface-variant block mt-0.5">CIVIL/ENG PRIME</span>
-              </div>
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-space-md pt-space-sm">
+            {/* Clear Primary CTAs */}
+            <div className="flex flex-wrap items-center gap-4 pt-2">
               <Link
-                href="/services"
-                className="px-space-xl py-space-md bg-primary-container text-on-primary-container hover:bg-secondary-fixed transition-all font-label-caps text-label-caps uppercase font-bold flex items-center gap-space-xs shadow-lg hover:shadow-primary-container/20"
+                href="/contact"
+                className="px-6 py-3.5 bg-primary-container hover:bg-secondary-fixed text-on-primary-container font-label-caps text-xs sm:text-sm uppercase font-bold flex items-center gap-2 rounded shadow-lg transition-all"
               >
-                <span className="material-symbols-outlined text-[18px]">domain_verification</span>
-                <span>Inspect Structural Specification</span>
+                <span className="material-symbols-outlined text-[18px]">calendar_month</span>
+                <span>Get a Free Quote</span>
               </Link>
-              <button
-                onClick={() => window.print()}
-                className="px-space-lg py-space-md bg-surface-container-high text-on-surface hover:text-primary-container transition-all font-label-caps text-label-caps uppercase font-bold flex items-center gap-space-xs border border-outline-variant/40"
+              <Link
+                href="/services#estimator"
+                className="px-6 py-3.5 bg-surface-container hover:bg-surface-container-high border border-outline-variant/50 text-on-surface font-label-caps text-xs sm:text-sm uppercase font-bold flex items-center gap-2 rounded transition-all"
               >
-                <span className="material-symbols-outlined text-[18px]">print</span>
-                <span>Print An Audit Brief</span>
-              </button>
+                <span className="material-symbols-outlined text-[18px]">calculate</span>
+                <span>Estimate Your Costs</span>
+              </Link>
+            </div>
+
+            {/* Trust Highlights */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-4 border-t border-outline-variant/20">
+              <div>
+                <div className="font-headline-sm text-lg font-bold text-primary-container">NHBRC</div>
+                <div className="font-body-sm text-xs text-on-surface-variant">Reg #30002841</div>
+              </div>
+              <div>
+                <div className="font-headline-sm text-lg font-bold text-on-surface">CIDB 9GB/CE</div>
+                <div className="font-body-sm text-xs text-on-surface-variant">Top National Rating</div>
+              </div>
+              <div>
+                <div className="font-headline-sm text-lg font-bold text-secondary">10 Years</div>
+                <div className="font-body-sm text-xs text-on-surface-variant">Structural Guarantee</div>
+              </div>
+              <div>
+                <div className="font-headline-sm text-lg font-bold text-primary-container">100% Real</div>
+                <div className="font-body-sm text-xs text-on-surface-variant">Client Projects</div>
+              </div>
             </div>
           </div>
 
-          {/* Right Hero Image Card */}
+          {/* Hero Visual Card - Real Client Image */}
           <div className="lg:col-span-5 relative">
-            <div className="relative w-full h-[480px] bg-surface-container-low overflow-hidden shadow-2xl border border-outline-variant/30">
+            <div className="relative rounded-lg overflow-hidden shadow-2xl border border-outline-variant/30 aspect-[4/3] lg:aspect-[1/1] bg-surface-container-low group">
               <img
-                src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1200&q=80"
-                alt="Steyn City Monolithic Residence at dusk"
-                className="w-full h-full object-cover brightness-90 contrast-125 hover:scale-105 transition-transform duration-700"
+                src="/projects/mathex-work-14.jpg"
+                alt="Bespoke floating marble staircase built by Mathex Project"
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-surface via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-surface-container-lowest/90 via-transparent to-transparent"></div>
 
-              {/* Overlays */}
-              <div className="absolute top-3 left-3 bg-surface-container-lowest/90 px-3 py-1 font-label-mono text-[11px] text-primary-container border border-outline-variant/40">
-                SUPERSTRUCTURE PHASE // CRANE 04-2
-              </div>
-              <div className="absolute top-3 right-3 bg-surface-container-lowest/90 px-3 py-1 font-label-mono text-[11px] text-secondary border border-outline-variant/40">
-                RADIAL DISPATCH: 14.2KM // ECSA REF #
-              </div>
-
-              <div className="absolute bottom-4 left-4 right-4 bg-surface-container-lowest/90 backdrop-blur-md p-space-md flex items-center justify-between border border-outline-variant/40">
-                <div className="flex flex-col font-label-mono">
-                  <span className="text-[10px] text-on-surface-variant uppercase tracking-widest">
-                    RADIAL DEFLECTION: 0.00% / SOIL
-                  </span>
-                  <span className="text-label-mono text-on-surface font-bold">
-                    MAIN REEF YARD // GAUTENG
-                  </span>
+              <div className="absolute bottom-5 left-5 right-5 bg-surface/90 backdrop-blur-md p-4 rounded border border-outline-variant/30 space-y-1">
+                <div className="flex items-center justify-between text-xs font-label-mono">
+                  <span className="text-primary-container font-bold">REAL CLIENT PROJECT</span>
+                  <span className="text-secondary font-bold">MEYERSDAL ECO ESTATE</span>
                 </div>
-                <div className="flex items-center gap-space-xs text-primary-container font-label-mono text-label-mono">
-                  <span className="material-symbols-outlined text-[16px] animate-pulse">radar</span>
-                  <span>LIVE TELEMETRY BROADCASTING</span>
-                </div>
+                <p className="text-sm font-body-sm text-on-surface leading-snug">
+                  Floating cantilevered zigzag marble staircase with double-volume glass curtain facade.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quantitative Field Metrics (4 Columns) */}
-      <section className="w-full bg-surface-container-lowest py-space-xl px-4 sm:px-6 lg:px-8 border-y border-outline-variant/20">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
-            {/* Stat 1 */}
-            <div className="bg-surface-container-low p-space-lg flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container transition-colors border border-outline-variant/30">
-              <div className="flex items-center justify-between mb-space-md">
-                <span className="font-label-caps text-label-caps text-on-surface-variant uppercase">DELIVERED VALUE</span>
-                <span className="material-symbols-outlined text-primary-container text-[24px]">payments</span>
-              </div>
-              <div className="flex items-baseline gap-space-xs my-space-xs">
-                <span className="font-metric-numeral text-metric-numeral text-primary-container font-bold">R450M+</span>
-              </div>
-              <p className="font-body-sm text-body-sm text-on-surface-variant mt-space-sm leading-relaxed">
-                Active residential monoliths, civic conduits, &amp; processing works delivered on schedule.
-              </p>
-              <div className="mt-space-md pt-space-xs font-label-mono text-label-mono text-[10px] text-secondary flex items-center gap-1">
-                <span className="material-symbols-outlined text-[12px]">verified</span>
-                JBCC GUARANTEED COMMISSIONS
-              </div>
-            </div>
-
-            {/* Stat 2 */}
-            <div className="bg-surface-container-low p-space-lg flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container transition-colors border border-outline-variant/30">
-              <div className="flex items-center justify-between mb-space-md">
-                <span className="font-label-caps text-label-caps text-on-surface-variant uppercase">DEPLOYED ARTISANS</span>
-                <span className="material-symbols-outlined text-secondary text-[24px]">engineering</span>
-              </div>
-              <div className="flex items-baseline gap-space-xs my-space-xs">
-                <span className="font-metric-numeral text-metric-numeral text-on-surface font-bold">120+</span>
-                <span className="font-label-mono text-label-mono text-secondary">ACTIVE</span>
-              </div>
-              <p className="font-body-sm text-body-sm text-on-surface-variant mt-space-sm leading-relaxed">
-                Red Seal boilermakers, formwork crews, and heavy plant earthmoving operators across 6 sites.
-              </p>
-              <div className="mt-space-md pt-space-xs font-label-mono text-label-mono text-[10px] text-on-surface-variant flex items-center gap-1">
-                <span className="material-symbols-outlined text-[12px]">military_tech</span>
-                RED SEAL TRADES ACCREDITATION
-              </div>
-            </div>
-
-            {/* Stat 3 */}
-            <div className="bg-surface-container-low p-space-lg flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container transition-colors border border-outline-variant/30">
-              <div className="flex items-center justify-between mb-space-md">
-                <span className="font-label-caps text-label-caps text-on-surface-variant uppercase">WARRANTY CLAIMS</span>
-                <span className="material-symbols-outlined text-tertiary-fixed-dim text-[24px]">security</span>
-              </div>
-              <div className="flex items-baseline gap-space-xs my-space-xs">
-                <span className="font-metric-numeral text-metric-numeral text-primary-container font-bold">0.00%</span>
-              </div>
-              <p className="font-body-sm text-body-sm text-on-surface-variant mt-space-sm leading-relaxed">
-                Post-occupancy warranty defect claims since founding registration across all structural frames.
-              </p>
-              <div className="mt-space-md pt-space-xs font-label-mono text-label-mono text-[10px] text-primary-container flex items-center gap-1">
-                <span className="material-symbols-outlined text-[12px]">done_all</span>
-                NHBRC INDEMNIFIED CONTINUITY
-              </div>
-            </div>
-
-            {/* Stat 4 */}
-            <div className="bg-surface-container-low p-space-lg flex flex-col justify-between shadow-md relative overflow-hidden group hover:bg-surface-container transition-colors border border-outline-variant/30">
-              <div className="flex items-center justify-between mb-space-md">
-                <span className="font-label-caps text-label-caps text-on-surface-variant uppercase">TOTAL CONCRETE</span>
-                <span className="material-symbols-outlined text-secondary text-[24px]">foundation</span>
-              </div>
-              <div className="flex items-baseline gap-space-xs my-space-xs">
-                <span className="font-metric-numeral text-metric-numeral text-on-surface font-bold">185k</span>
-                <span className="font-label-mono text-label-mono text-secondary">M³ POURED</span>
-              </div>
-              <p className="font-body-sm text-body-sm text-on-surface-variant mt-space-sm leading-relaxed">
-                Poured-in-place structural and off-shutter reinforced core areas completed to date.
-              </p>
-              <div className="mt-space-md pt-space-xs font-label-mono text-label-mono text-[10px] text-secondary flex items-center gap-1">
-                <span className="material-symbols-outlined text-[12px]">science</span>
-                C35-C50 SLAG SPECIFICATION
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Selected Structural Works */}
-      <section className="w-full bg-surface py-space-xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-space-lg">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-space-md">
+      {/* Core Services Section */}
+      <section className="w-full bg-surface-container-lowest py-16 px-4 sm:px-6 lg:px-8 border-b border-outline-variant/20">
+        <div className="max-w-7xl mx-auto space-y-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
             <div>
-              <span className="font-label-mono text-label-mono text-secondary">// DOSSIER // FOUNDATIONAL</span>
-              <h2 className="font-headline-xl text-headline-xl uppercase text-on-surface font-bold tracking-tight">
-                SELECTED STRUCTURAL WORKS
+              <span className="font-label-mono text-xs text-secondary uppercase font-bold">
+                // WHAT WE DELIVER
+              </span>
+              <h2 className="font-headline-lg text-2xl sm:text-3xl uppercase font-bold text-on-surface mt-1">
+                Our Core Building Services
               </h2>
-              <p className="font-body-sm text-body-sm text-on-surface-variant max-w-xl mt-1">
-                Excavation/sub-terrain interventions, bespoke luxury hard architectures, and specialised civic load configurations.
-              </p>
             </div>
-
-            {/* Filter Buttons */}
-            <div className="flex flex-wrap items-center gap-space-xs font-label-mono text-label-mono">
-              <button
-                onClick={() => setActiveFilter('ALL')}
-                className={`px-3 py-1.5 transition-colors uppercase ${
-                  activeFilter === 'ALL'
-                    ? 'bg-primary-container text-on-primary-container font-bold'
-                    : 'bg-surface-container text-on-surface-variant hover:text-on-surface'
-                }`}
-              >
-                ALL DISCIPLINES
-              </button>
-              <button
-                onClick={() => setActiveFilter('CIVIL')}
-                className={`px-3 py-1.5 transition-colors uppercase ${
-                  activeFilter === 'CIVIL'
-                    ? 'bg-primary-container text-on-primary-container font-bold'
-                    : 'bg-surface-container text-on-surface-variant hover:text-on-surface'
-                }`}
-              >
-                HEAVY CIVIL/STEEL
-              </button>
-              <button
-                onClick={() => setActiveFilter('HYDRONIC')}
-                className={`px-3 py-1.5 transition-colors uppercase ${
-                  activeFilter === 'HYDRONIC'
-                    ? 'bg-primary-container text-on-primary-container font-bold'
-                    : 'bg-surface-container text-on-surface-variant hover:text-on-surface'
-                }`}
-              >
-                CIVIC HYDRONIC
-              </button>
-              <button
-                onClick={() => setActiveFilter('RESIDENTIAL')}
-                className={`px-3 py-1.5 transition-colors uppercase ${
-                  activeFilter === 'RESIDENTIAL'
-                    ? 'bg-primary-container text-on-primary-container font-bold'
-                    : 'bg-surface-container text-on-surface-variant hover:text-on-surface'
-                }`}
-              >
-                HIGH-END RESIDENTIAL
-              </button>
-            </div>
+            <p className="font-body-sm text-sm text-on-surface-variant max-w-md">
+              Complete residential building, renovations, and engineering tailored to homeowners and property developers.
+            </p>
           </div>
 
-          {/* Project Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-gutter">
-            {filteredProjects.map((p) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {services.map((item) => (
               <div
-                key={p.id}
-                className="bg-surface-container-low border border-outline-variant/30 flex flex-col justify-between shadow-xl group hover:border-primary-container/60 transition-all"
+                key={item.title}
+                className="bg-surface-container-low p-6 rounded border border-outline-variant/30 flex flex-col justify-between hover:border-primary-container transition-all group"
               >
-                <div>
-                  <div className="relative w-full h-72 bg-surface-container overflow-hidden">
-                    <img
-                      src={p.imageUrl}
-                      alt={p.title}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                    <div className="absolute top-2 left-2 bg-surface-container-lowest/90 px-2 py-1 font-label-mono text-[10px] text-primary-container">
-                      {p.badge1}
-                    </div>
-                    <div className="absolute top-2 right-2 bg-surface-container-lowest/90 px-2 py-1 font-label-mono text-[10px] text-secondary">
-                      {p.badge2}
-                    </div>
+                <div className="space-y-4">
+                  <div className="w-12 h-12 bg-primary-container/10 rounded flex items-center justify-center text-primary-container group-hover:bg-primary-container group-hover:text-on-primary-container transition-colors">
+                    <span className="material-symbols-outlined text-[28px]">{item.icon}</span>
                   </div>
-
-                  <div className="p-space-lg space-y-space-sm">
-                    <span className="font-label-mono text-[11px] text-secondary uppercase tracking-widest block">
-                      {p.subCategory}
-                    </span>
-                    <h3 className="font-headline-md text-headline-md font-bold text-on-surface uppercase">
-                      {p.title}
-                    </h3>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">
-                      {p.desc}
-                    </p>
-                  </div>
+                  <span className="inline-block px-2 py-0.5 bg-surface-container text-[11px] font-label-mono text-secondary rounded">
+                    {item.badge}
+                  </span>
+                  <h3 className="font-headline-sm text-lg font-bold text-on-surface uppercase">
+                    {item.title}
+                  </h3>
+                  <p className="font-body-sm text-sm text-on-surface-variant leading-relaxed">
+                    {item.desc}
+                  </p>
                 </div>
 
-                <div className="p-space-lg pt-0">
-                  <div className="bg-surface-container p-space-sm flex flex-wrap items-center justify-between gap-space-xs font-label-mono text-[11px] text-on-surface-variant border border-outline-variant/20">
-                    <span>{p.spec1}</span>
-                    <span>|</span>
-                    <span>{p.spec2}</span>
-                    <span>|</span>
-                    <span className="text-primary-container">{p.spec3}</span>
-                  </div>
+                <div className="pt-6 mt-4 border-t border-outline-variant/20">
+                  <Link
+                    href={item.href}
+                    className="inline-flex items-center gap-1 text-xs font-label-caps uppercase font-bold text-primary-container hover:underline"
+                  >
+                    <span>Learn More &amp; Pricing</span>
+                    <span className="material-symbols-outlined text-[14px]">arrow_forward</span>
+                  </Link>
                 </div>
               </div>
             ))}
@@ -376,150 +237,278 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CAD Meets Heavy Tectonics */}
-      <section className="w-full bg-surface-container-lowest py-space-xl px-4 sm:px-6 lg:px-8 border-y border-outline-variant/20">
-        <div className="max-w-7xl mx-auto space-y-space-xl">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
-            <div className="lg:col-span-7 space-y-space-md">
-              <span className="font-label-mono text-label-mono text-primary-container uppercase">
-                // CRITICAL BLUEPRINT // TECTONICS
+      {/* Featured Real Projects Showcase */}
+      <section className="w-full bg-surface py-16 px-4 sm:px-6 lg:px-8 border-b border-outline-variant/20">
+        <div className="max-w-7xl mx-auto space-y-10">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+              <span className="font-label-mono text-xs text-primary-container uppercase font-bold">
+                // AUTHENTIC CLIENT WORK
               </span>
-              <h2 className="font-headline-xl text-headline-xl text-on-surface uppercase font-bold tracking-tight">
-                WHERE RIGOROUS CAD MEETS HEAVY TECTONICS
+              <h2 className="font-headline-lg text-2xl sm:text-3xl uppercase font-bold text-on-surface mt-1">
+                Featured Completed Projects
               </h2>
-              <p className="font-body-md text-body-md text-on-surface-variant leading-relaxed">
-                Architecture reaches physical truth only when theoretical calculations absorb real earth loads, thermal shifts, and tensile dynamics. We refuse compromise between architectural aesthetics and structural engineering survivability.
-              </p>
-
-              <div className="space-y-space-md pt-space-xs">
-                <div className="flex items-start gap-space-md bg-surface-container p-space-md border border-outline-variant/30">
-                  <div className="w-10 h-10 bg-primary-container/10 flex items-center justify-center text-primary-container shrink-0">
-                    <span className="material-symbols-outlined text-[24px]">architecture</span>
-                  </div>
-                  <div>
-                    <h4 className="font-headline-sm text-headline-sm font-bold text-on-surface uppercase">
-                      MILLIMETRIC PRECISION STANDARD
-                    </h4>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-1">
-                      Strict site tolerances constrained to ±1.5mm through automated laser scanning and continuous ECSA inspection protocols across every pour.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-space-md bg-surface-container p-space-md border border-outline-variant/30">
-                  <div className="w-10 h-10 bg-secondary/10 flex items-center justify-center text-secondary shrink-0">
-                    <span className="material-symbols-outlined text-[24px]">layers</span>
-                  </div>
-                  <div>
-                    <h4 className="font-headline-sm text-headline-sm font-bold text-on-surface uppercase">
-                      MATERIAL AUTHENTICITY &amp; OFF-SHUTTER CRAFT
-                    </h4>
-                    <p className="font-body-sm text-body-sm text-on-surface-variant mt-1">
-                      We embrace raw formwork with un-compacting micro-finishes, customised timber shuttering patterns, and uncompromised structural steel nodes with full tensile certifications.
-                    </p>
-                  </div>
-                </div>
-              </div>
             </div>
 
-            {/* Testimonial Card */}
-            <div className="lg:col-span-5 bg-surface-container-low p-space-xl border-l-4 border-primary-container shadow-2xl relative">
-              <div className="flex items-center justify-between pb-space-md">
-                <span className="font-label-mono text-[11px] text-secondary uppercase tracking-widest">
-                  PEER RECOGNITION // VERIFICATION
-                </span>
-                <div className="flex text-primary-container">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i} className="material-symbols-outlined text-[18px]">
-                      star
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <blockquote className="font-display-hero text-headline-md italic text-on-surface leading-snug">
-                &ldquo;Mathex Project is the sole engineering and execution team in sub-Saharan Africa able to convert our radical embraced 18-meter cantilevers into unyielding structural reality without modifying a millimeter of our architectural intent.&rdquo;
-              </blockquote>
-
-              <div className="pt-space-lg flex items-center justify-between">
-                <div>
-                  <div className="font-headline-sm text-headline-sm font-bold text-on-surface">
-                    ARCH. STEPHEN LE ROUX
-                  </div>
-                  <div className="font-label-mono text-label-mono text-on-surface-variant">
-                    PRINCIPAL DIRECTOR // FEODOR &amp; ASSOCIATES STUDIO
-                  </div>
-                </div>
-                <div className="w-10 h-10 bg-surface-container flex items-center justify-center font-bold text-primary-container border border-outline-variant/50">
-                  FA
-                </div>
-              </div>
+            {/* Filter Tabs */}
+            <div className="flex flex-wrap items-center gap-2 font-label-mono text-xs">
+              {[
+                { id: 'ALL', label: 'All Projects' },
+                { id: 'HOMES', label: 'Luxury Homes' },
+                { id: 'RENOVATIONS', label: 'Renovations' },
+                { id: 'PLUMBING', label: 'Plumbing & Water' },
+              ].map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveFilter(tab.id)}
+                  className={`px-3 py-1.5 rounded transition-colors uppercase ${
+                    activeFilter === tab.id
+                      ? 'bg-primary-container text-on-primary-container font-bold'
+                      : 'bg-surface-container text-on-surface-variant hover:text-on-surface'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
             </div>
           </div>
 
-          {/* Mini Badges Strip */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-space-sm pt-space-md border-t border-outline-variant/20 font-label-mono text-label-mono text-on-surface-variant">
-            <div className="flex items-center gap-space-xs">
-              <span className="material-symbols-outlined text-primary-container text-[18px]">verified</span>
-              <span>CIDB GRADE 9GB / 9CE</span>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map((p) => (
+              <div
+                key={p.id}
+                className="bg-surface-container-low rounded border border-outline-variant/30 overflow-hidden shadow-lg group hover:border-primary-container transition-all flex flex-col justify-between"
+              >
+                <div>
+                  <div className="relative h-64 bg-surface-container overflow-hidden">
+                    <img
+                      src={p.imageUrl}
+                      alt={p.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute top-3 left-3 bg-surface-container-lowest/90 px-2.5 py-1 text-[11px] font-label-mono text-primary-container rounded">
+                      {p.location}
+                    </div>
+                  </div>
+
+                  <div className="p-6 space-y-3">
+                    <h3 className="font-headline-sm text-lg font-bold text-on-surface uppercase leading-snug">
+                      {p.title}
+                    </h3>
+                    <p className="font-body-sm text-sm text-on-surface-variant leading-relaxed">
+                      {p.desc}
+                    </p>
+                  </div>
+                </div>
+
+                <div className="p-6 pt-0 border-t border-outline-variant/20 mt-4">
+                  <div className="pt-3 flex items-center justify-between text-xs font-label-mono text-secondary">
+                    <span className="truncate max-w-[200px]">{p.spec}</span>
+                    <Link href="/portfolio" className="text-primary-container hover:underline uppercase shrink-0">
+                      View Work &rarr;
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center pt-4">
+            <Link
+              href="/portfolio"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-surface-container-high hover:bg-surface-container border border-outline-variant/50 text-on-surface font-label-caps text-xs uppercase font-bold rounded transition-colors"
+            >
+              <span>View All 40+ Real Project Photos</span>
+              <span className="material-symbols-outlined text-[16px]">arrow_forward</span>
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Real On-Site Craftsmanship Feature */}
+      <section className="w-full bg-surface-container-lowest py-16 px-4 sm:px-6 lg:px-8 border-b border-outline-variant/20">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          <div className="lg:col-span-6 space-y-5">
+            <span className="font-label-mono text-xs text-secondary uppercase font-bold">
+              // BEHIND THE SCENES
+            </span>
+            <h2 className="font-headline-xl text-2xl sm:text-3xl font-bold uppercase text-on-surface leading-tight">
+              Precision Engineering &amp; On-Site Craftsmanship
+            </h2>
+            <p className="font-body-md text-sm sm:text-base text-on-surface-variant leading-relaxed">
+              True quality is measured by what lies beneath the surface. From rough-in copper plumbing chases and concealed Geberit cisterns to laser-calibrated underfloor heating and millimeter tile leveling, our team takes pride in every detail.
+            </p>
+
+            <div className="space-y-3 pt-2">
+              <div className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-primary-container text-xl mt-0.5">check_circle</span>
+                <div>
+                  <strong className="text-on-surface text-sm block">SABS Copper Piping &amp; Concealed Plumbing</strong>
+                  <span className="text-xs text-on-surface-variant">Pressure-tested to ensure zero wall dampness and decades of leak-free reliability.</span>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-primary-container text-xl mt-0.5">check_circle</span>
+                <div>
+                  <strong className="text-on-surface text-sm block">Underfloor Heating Monitoring</strong>
+                  <span className="text-xs text-on-surface-variant">Continuously tested with Klima Guard monitors throughout the screeding and tiling process.</span>
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="material-symbols-outlined text-primary-container text-xl mt-0.5">check_circle</span>
+                <div>
+                  <strong className="text-on-surface text-sm block">Laser Leveling &amp; Large Format Porcelain</strong>
+                  <span className="text-xs text-on-surface-variant">Calibrated precision leveling clips guarantee perfectly flat, lippage-free floors and walls.</span>
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-space-xs">
-              <span className="material-symbols-outlined text-secondary text-[18px]">engineering</span>
-              <span>ECSA REGISTERED ENGINEERS</span>
+
+            <div className="pt-2">
+              <Link
+                href="/portfolio"
+                className="inline-flex items-center gap-2 px-5 py-2.5 bg-primary-container hover:bg-secondary-fixed text-on-primary-container font-label-caps text-xs uppercase font-bold rounded"
+              >
+                <span>See Renovation Progress Photos</span>
+                <span className="material-symbols-outlined text-base">arrow_forward</span>
+              </Link>
             </div>
-            <div className="flex items-center gap-space-xs">
-              <span className="material-symbols-outlined text-primary-container text-[18px]">shield</span>
-              <span>10-YR DEFECT WARRANTY</span>
+          </div>
+
+          {/* Before & In-Progress Photo Collage */}
+          <div className="lg:col-span-6 grid grid-cols-2 gap-4">
+            <div className="space-y-4">
+              <div className="relative rounded overflow-hidden shadow-lg border border-outline-variant/30 h-48 bg-surface-container">
+                <img
+                  src="/projects/mathex-work-39.jpg"
+                  alt="Rough-in copper plumbing and concealed cistern installation"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-2 left-2 bg-surface/90 px-2 py-0.5 text-[10px] font-label-mono text-primary-container rounded">
+                  ROUGH-IN PLUMBING
+                </div>
+              </div>
+              <div className="relative rounded overflow-hidden shadow-lg border border-outline-variant/30 h-60 bg-surface-container">
+                <img
+                  src="/projects/mathex-work-35.jpg"
+                  alt="Precision tiling tools and laser level calibration"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-2 left-2 bg-surface/90 px-2 py-0.5 text-[10px] font-label-mono text-secondary rounded">
+                  PRECISION TILING TOOLS
+                </div>
+              </div>
             </div>
-            <div className="flex items-center gap-space-xs">
-              <span className="material-symbols-outlined text-secondary text-[18px]">task_alt</span>
-              <span>SABS &amp; SANS 10400 AUDITED</span>
+
+            <div className="space-y-4 pt-6">
+              <div className="relative rounded overflow-hidden shadow-lg border border-outline-variant/30 h-60 bg-surface-container">
+                <img
+                  src="/projects/mathex-work-34.jpg"
+                  alt="Underfloor heating testing with Klima Guard monitor"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-2 left-2 bg-surface/90 px-2 py-0.5 text-[10px] font-label-mono text-primary-container rounded">
+                  UNDERFLOOR HEATING TEST
+                </div>
+              </div>
+              <div className="relative rounded overflow-hidden shadow-lg border border-outline-variant/30 h-48 bg-surface-container">
+                <img
+                  src="/projects/mathex-work-08.jpg"
+                  alt="Finished luxury sage green vanity with gold tapware"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute bottom-2 left-2 bg-surface/90 px-2 py-0.5 text-[10px] font-label-mono text-on-surface rounded">
+                  FINISHED MASTER BATH
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Procure Specifications & Structural BOQ CTA */}
-      <section className="w-full bg-surface py-space-xl px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="border-2 border-primary-container bg-surface-container-low p-space-xl relative overflow-hidden shadow-2xl">
-            <div className="absolute top-0 right-0 bg-primary-container text-on-primary-container font-label-mono text-[10px] uppercase font-bold px-3 py-1">
-              OFFICIAL PORTAL
+      {/* Simple 4-Step Client Workflow */}
+      <section className="w-full bg-surface py-16 px-4 sm:px-6 lg:px-8 border-b border-outline-variant/20">
+        <div className="max-w-7xl mx-auto space-y-12">
+          <div className="text-center max-w-2xl mx-auto space-y-2">
+            <span className="font-label-mono text-xs text-primary-container uppercase font-bold">
+              // SIMPLE &amp; TRANSPARENT
+            </span>
+            <h2 className="font-headline-xl text-2xl sm:text-3xl font-bold uppercase text-on-surface">
+              How We Build Your Project
+            </h2>
+            <p className="font-body-md text-sm text-on-surface-variant">
+              From our first site visit to the moment you walk through the front door, we keep your build simple, organized, and on schedule.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-surface-container-low p-6 rounded border border-outline-variant/30 space-y-3">
+              <div className="font-headline-lg text-3xl font-bold text-primary-container">01</div>
+              <h4 className="font-headline-sm text-base font-bold text-on-surface uppercase">
+                Consultation &amp; Plans
+              </h4>
+              <p className="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                We meet on site or review your architectural drawings to establish your requirements and specifications.
+              </p>
             </div>
 
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-gutter-desktop items-center">
-              <div className="lg:col-span-7 space-y-space-sm">
-                <span className="font-label-mono text-label-mono text-secondary uppercase">
-                  // RESTRICTED PROCUREMENT // TENDER ACCESS
-                </span>
-                <h2 className="font-headline-xl text-headline-xl uppercase text-on-surface font-bold">
-                  PROCURE PROJECT SPECIFICATIONS &amp; STRUCTURAL BOQ
-                </h2>
-                <p className="font-body-md text-body-md text-on-surface-variant">
-                  Request encrypted access to certified tender sheets, concrete pour test histories, and rebar scheduling sheets. Verified developers and architectural consultants receive instant authorization.
-                </p>
-                <div className="pt-2 font-label-mono text-[11px] text-on-surface-variant/70">
-                  ALL DOCUMENTS PROTECTED UNDER POPIA &amp; TITLE DEED IP DIRECTORY
-                </div>
-              </div>
-
-              <div className="lg:col-span-5 flex flex-col sm:flex-row lg:flex-col gap-space-md justify-center">
-                <Link
-                  href="/contact"
-                  className="px-space-xl py-space-md bg-primary-container text-on-primary-container hover:bg-secondary-fixed transition-all font-label-caps text-label-caps uppercase font-bold flex items-center justify-center gap-space-xs shadow-lg"
-                >
-                  <span className="material-symbols-outlined text-[18px]">lock_open</span>
-                  <span>ACCESS TELEMETRY VAULT</span>
-                </Link>
-                <Link
-                  href="/contact"
-                  className="px-space-xl py-space-md bg-surface-container-high text-on-surface hover:text-primary-container transition-all font-label-caps text-label-caps uppercase font-bold flex items-center justify-center gap-space-xs border border-outline-variant/50"
-                >
-                  <span className="material-symbols-outlined text-[18px]">terminal</span>
-                  <span>BOOK LEAD ENGINEER BRIEF</span>
-                </Link>
-              </div>
+            <div className="bg-surface-container-low p-6 rounded border border-outline-variant/30 space-y-3">
+              <div className="font-headline-lg text-3xl font-bold text-secondary">02</div>
+              <h4 className="font-headline-sm text-base font-bold text-on-surface uppercase">
+                Fixed-Price Quote
+              </h4>
+              <p className="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                You receive a detailed bill of quantities with clear milestones and zero hidden costs.
+              </p>
             </div>
+
+            <div className="bg-surface-container-low p-6 rounded border border-outline-variant/30 space-y-3">
+              <div className="font-headline-lg text-3xl font-bold text-primary-container">03</div>
+              <h4 className="font-headline-sm text-base font-bold text-on-surface uppercase">
+                Construction &amp; Updates
+              </h4>
+              <p className="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                Our master artisans build under full engineer oversight with weekly progress reports sent directly to you.
+              </p>
+            </div>
+
+            <div className="bg-surface-container-low p-6 rounded border border-outline-variant/30 space-y-3">
+              <div className="font-headline-lg text-3xl font-bold text-secondary">04</div>
+              <h4 className="font-headline-sm text-base font-bold text-on-surface uppercase">
+                Handover &amp; Warranty
+              </h4>
+              <p className="font-body-sm text-xs text-on-surface-variant leading-relaxed">
+                Thorough inspection walkthrough, municipal and NHBRC certificates of compliance, and your keys.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action Banner */}
+      <section className="w-full bg-surface-container-lowest py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto bg-surface-container-low border border-outline-variant/30 p-8 sm:p-12 rounded-lg shadow-2xl text-center space-y-6">
+          <span className="font-label-mono text-xs text-primary-container uppercase font-bold tracking-wider">
+            READY TO START YOUR BUILD OR RENOVATION?
+          </span>
+          <h2 className="font-headline-xl text-2xl sm:text-4xl uppercase font-bold text-on-surface max-w-2xl mx-auto leading-tight">
+            Schedule a Consultation with Mathex Project Today
+          </h2>
+          <p className="font-body-md text-sm sm:text-base text-on-surface-variant max-w-xl mx-auto leading-relaxed">
+            Call us directly or send through your project brief. We will arrange a free site evaluation and supply a comprehensive quotation.
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
+            <Link
+              href="/contact"
+              className="px-8 py-3.5 bg-primary-container hover:bg-secondary-fixed text-on-primary-container font-label-caps text-sm uppercase font-bold rounded shadow-lg transition-all"
+            >
+              Request a Free Quote
+            </Link>
+            <a
+              href="tel:+27118924000"
+              className="px-8 py-3.5 bg-surface-container hover:bg-surface-container-high border border-outline-variant/50 text-on-surface font-label-caps text-sm uppercase font-bold rounded transition-all"
+            >
+              Call +27 (0) 11 892 4000
+            </a>
           </div>
         </div>
       </section>

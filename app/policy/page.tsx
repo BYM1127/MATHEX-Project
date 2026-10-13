@@ -213,7 +213,7 @@ export default function PolicyPage() {
                     <img
                       className="w-full h-full object-cover"
                       alt="High-spec engineering safety audit"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqi_zp5YtPfrRiRLK9FcNUqu1MQwPQyW6D68Bzpi_eVVdctKiHx1j9PvlHuRai8WU_VZz8hXmiaEjTiAMGFUHvV1QEn-VUm1j_iILjD3Ashd7pggKBMJebvNWaUJotDZSD1ty0GmsISzcNew_oH0NRfE4es6AbHOYxc2HZW3ysonHqpQcEVEagXg2RyROalizSsFQExebXQZLrsh_qXUZRdXYF2ceyqnnYGrDPMYhb98YnQ5xAAnxG"
+                      src="/projects/mathex-work-35.jpg"
                     />
                     <div className="absolute bottom-2 left-2 bg-surface-container-lowest/80 px-2 py-1 font-label-mono text-label-mono text-primary-container">
                       SITE AUDIT // OHS-2025-V3
@@ -306,7 +306,7 @@ export default function PolicyPage() {
                     <img
                       className="w-full h-full object-cover"
                       alt="Post-tensioned slab detail"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjz8MI7uHUnTBotcFczk0FpCw854JUIjQEQQ7moVOcTCWCUFI1ue_oTY-Cn22MlWXZLrUvRYzsrzhM9cwexcTepjQtxuaV5yGC-6jLwCEeKmS3yblTA429vgn1QhjgfZbUAwP8NCHplYjB_oQyWvOTFMv63BOq05cSMAckEkk20CqOTgh6OTdoq7KP2JEBosqDsMaO59B2EUMbYtC3EPZgKoXbEBlaQR-La5NAC_ybJI-w4xzhv87R"
+                      src="/projects/mathex-work-39.jpg"
                     />
                     <div className="absolute bottom-2 left-2 bg-surface-container-lowest/80 px-2 py-1 font-label-mono text-label-mono text-primary-container">
                       FOUNDATION PROOF // C28/35
@@ -410,7 +410,7 @@ export default function PolicyPage() {
                     <img
                       className="w-full h-full object-cover"
                       alt="Laboratory compression cube testing"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7JruI41I__r4AXZ3ekWf1WxH4Pvz_ktTZp32y-ZeULMxYyzRYRMwUI_omFZFqAS6xXgnov4xcYRvobbzktLjh233zRU6V1htt2EiqXBZx0u0uJ4vf6OSHMUMBp4X6CHFJWs--VoE6zv3GbIgRgugvT6TuovMHI_4CX1quolFn1kanS_WzcARA1MupJv1Ek6muIaowRBNQiTWUcbZeJELYoD9TM-IW3g90th8H1opwo_shOCJwDsIf"
+                      src="/projects/mathex-work-34.jpg"
                     />
                     <div className="absolute bottom-2 left-2 bg-surface-container-lowest/80 px-2 py-1 font-label-mono text-label-mono text-primary-container">
                       SANAS LAB // 17025 VERIFIED
@@ -479,7 +479,7 @@ export default function PolicyPage() {
                     <img
                       className="w-full h-full object-cover"
                       alt="Geotechnical percussion drilling rig"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuAbKLEeUMbmDmYTYTI--IAyB6bk5y9xInGPbTu0HR7wxSRYE-rfEwMfY5nvch0D8yRDTyxRvKjXs8K1PiLlTK4OD1tPwtdbOwUeM6GJ_Q2NtW4WEWn1qd8UOan2cw5W5pviE4vkk6n7KepS4vHbE7eCW9ctVZS76FzWMk0FLg3N3JHLLP9VUoHsMVpEpX_uZxKOHFjzUiYXtMEzXw9D5JMF9t3bO4XLVpfHPE0vQAL8GNJchvLQa9wy"
+                      src="/projects/mathex-work-03.jpg"
                     />
                     <div className="absolute bottom-2 left-2 bg-surface-container-lowest/80 px-2 py-1 font-label-mono text-label-mono text-primary-container">
                       GEOTECH BOREHOLE // REGION D
@@ -542,7 +542,7 @@ export default function PolicyPage() {
                     <img
                       className="w-full h-full object-cover"
                       alt="Encrypted schematics and structural wireframes"
-                      src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPY19Rhr-k8ydsIBFjgByUUCOjFQ3fnRosavQlYASDda6D6_XpcszPZDkHEs3A3RALVDuOk3MlAwb7cY1_hMlIuD619jvlmRgX6rp1ZtzYPjDPTrIIhsmFe9IPuMrPuU471VHGhbB8bp-1A81etrSvts6lyNS9rz0HqohkI7eNIL1xUXYP27wyrnlAA-I26hOBTQZ6WlGQFYx6ptu5se6djkAPnSDggSLHLndhrDwDLfES52Q2RP0w"
+                      src="/projects/mathex-work-18.jpg"
                     />
                     <div className="absolute bottom-2 left-2 bg-surface-container-lowest/80 px-2 py-1 font-label-mono text-label-mono text-primary-container">
                       BIM SECURITY // VAULT LEVEL-3
@@ -825,3 +825,4 @@ export default function PolicyPage() {
     </div>
   );
 }
+
